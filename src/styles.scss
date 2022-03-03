@@ -1,6 +1,3 @@
-// --------------------------
-// VARIABLES
-// --------------------------
 $maincolor: black;
 $contrastcolor: white;
 
@@ -9,25 +6,98 @@ $contrastcolor: white;
     background-color: $maincolor;
 }
 
-@mixin black-test-white-bg {
+@mixin black-text-white-bg {
     color: $maincolor;
     background-color: $contrastcolor;
 }
 
-// --------------------------
-// Header
-// --------------------------
+body {
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: white;
+}
+
+img {
+    width: 25vw;
+    height: 35vh;
+    object-fit: cover;
+}
 
 nav {
     @include white-text-black-bg;
     display: flex;
-    justify-content: flex-start;
-
+    justify-content: center;
+    padding: 0;
     a {
         @include white-text-black-bg;
         div {
-            margin: 10px;
-            font-size: large;
+            font-size: xx-large;
+            margin: 20px;
         }
     }
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    margin: 0;
+    input {
+        background-color: rgb(244, 255, 255);
+        width: 60vw;
+        height: 5vh;
+        padding: 5px;
+        margin: 5px 5px 0;
+        border: none;
+        border-radius: 10px;
+    }
+}
+
+.submitbutton {
+    font-weight: 600;
+    height: 6.75vh;
+    width: 200%;
+}
+input:hover {
+    background-color: lightblue;
+}
+
+div.cheesebox {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    h1 {
+        font-size: xx-large;
+        text-align: left;
+        margin-left: 2vh;
+        position: relative;
+        top: 11vh;
+    }
+    h3 {
+        text-align: right;
+        margin-right: 2vh;
+        color: white;
+        position: relative;
+        bottom: 9vh;
+    }
+    h1, h3 {
+        filter: drop-shadow(1px 1px 6px black);
+    }
+}
+.individualCheese {
+    height: 35vh;
+    margin: 0;
+}
+.individualCheese:hover {
+    transform: scale(105%);
+    filter: brightness(110%);
 }

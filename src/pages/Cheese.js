@@ -27,15 +27,19 @@ function Cheese(props) {
   const loaded = () => {
     return props.cheese.map((individualCheese) => (
       <div key={individualCheese._id} className="individualCheese">
-        <Link to={`/cheese/${individualCheese._id}`}><h1>{individualCheese.name}</h1></Link>
+        <Link to={`/cheese/${individualCheese._id}`}>
+        <h1>{individualCheese.name}</h1>
+        </Link>
+        <Link to={`/cheese/${individualCheese._id}`}>
         <img src={individualCheese.image} alt={individualCheese.name} />
+        </Link>
         <h3>{individualCheese.countryOfOrigin}</h3>
       </div>
     ));
   };
 
   const loading = () => {
-    return <h1>Loading...</h1>;
+    return <h1>Please wait patiently for the cheese to arrive...</h1>;
   };
   return (
     <section>
@@ -61,9 +65,11 @@ function Cheese(props) {
                 placeholder="Country of Origin"
                 onChange={handleChange}
             />
-            <input type="submit" value="Create Cheese!" />
+            <input class="submitbutton" type="submit" value="Create Cheese!" />
         </form>
+        <div class="cheesebox">
         {props.cheese ? loaded() : loading()}
+        </div>
     </section>
 );
 }
