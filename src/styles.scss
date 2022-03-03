@@ -40,31 +40,24 @@ nav {
     @include white-text-black-bg;
     display: flex;
     justify-content: center;
-    padding: 0;
-    a {
-        @include white-text-black-bg;
-        div {
-            font-size: xx-large;
-            margin: 2vh;
-        }
-    }
 }
 
 form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     input {
-        background-color: rgb(244, 255, 255);
-        width: 20vw;
-        height: 5vh;
+        background-color: rgb(255, 255, 255);
+        width: 74vw;
+        height: 3vh;
         padding: 5px;
-        margin: 5px 5px 0;
+        margin: 5px 2px 0;
         border: none;
         border-radius: 10px;
-        font-size: large;
+        font-size: 2vh;
     }
 }
 
@@ -72,8 +65,36 @@ form {
     background-color: rgb(9, 156, 9);
     color: white;
     font-weight: 400;
+    height: 4.75vh;
+    width: 74.75vw;
+}
+.showsubmitbutton {
+    background-color: rgb(9, 156, 9);
+    color: white;
+    font-weight: 400;
+    height: 6.75vh;
+    width: 24.75vw;
+    padding: 5px;
+    margin: 5px 2px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+.deletebutton {
+    background-color: rgb(156, 26, 9);
+    color: white;
+    font-weight: 400;
     height: 7vh;
-    width: 20.75vw;
+    width: 23.75vw;
+    padding: 5px;
+    margin: 5px 0 0 2px;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.submitbutton:hover, .deletebutton:hover, .showsubmitbutton:hover {
+    cursor: pointer;
 }
 
 .showInput {
@@ -88,8 +109,19 @@ form {
     object-fit: cover;
 }
 
-input:hover {
-    background-color: rgb(234, 250, 255);
+input:hover, button:hover {
+    filter: brightness(105%);
+}
+
+.cheeseLogo {
+    margin-top: 1vh;
+    height: 30%;
+    width: 30%;
+    transform: scaleX(-1);
+}
+
+.intro {
+    margin: 0 0 .5vh;
 }
 
 .cheesebox {

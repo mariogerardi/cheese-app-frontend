@@ -17,6 +17,11 @@ function Show(props) {
         props.history.push("/")
     }
 
+    const removeCheese = () => {
+        props.deleteCheese(individualCheese._id)
+        props.history.push("/")
+    }
+
     return (
         <section className="showsection">
             <div key={individualCheese._id} className="individualCheese showcheesebox">
@@ -51,7 +56,10 @@ function Show(props) {
                     onChange={handleChange}
                     className="showInput"
                 />
-                <input className="submitbutton" type="submit" value="Update Cheese" />
+                <div>
+                    <input className="showsubmitbutton" type="submit" value="Update Cheese" />
+                    <button className="deletebutton" id="delete" onClick={removeCheese}>Remove Cheese</button>
+                </div>
             </form>
         </section>
     )

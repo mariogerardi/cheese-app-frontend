@@ -46,6 +46,7 @@ function Cheese(props) {
   return (
     <section>
         <form onSubmit={handleSubmit}>
+            <h1 className="intro">Welcome to <em>Cheese App!</em></h1>
             <input
                 type="text"
                 value={newForm.name}
