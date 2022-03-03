@@ -26,14 +26,16 @@ function Cheese(props) {
   // loaded function
   const loaded = () => {
     return props.cheese.map((individualCheese) => (
-      <div key={individualCheese._id} className="individualCheese">
-        <Link to={`/cheese/${individualCheese._id}`}>
+      <div key={individualCheese._id} className="individualCheese cheesebox">
+      <Link to={`/cheese/${individualCheese._id}`}>
+      <img src={individualCheese.image} alt={individualCheese.name} />
+      </Link>
+      <Link to={`/cheese/${individualCheese._id}`}>
+      <div className="cheeseText">
         <h1>{individualCheese.name}</h1>
-        </Link>
-        <Link to={`/cheese/${individualCheese._id}`}>
-        <img src={individualCheese.image} alt={individualCheese.name} />
-        </Link>
         <h3>{individualCheese.countryOfOrigin}</h3>
+      </div>
+      </Link>
       </div>
     ));
   };
@@ -67,9 +69,7 @@ function Cheese(props) {
             />
             <input class="submitbutton" type="submit" value="Create Cheese!" />
         </form>
-        <div class="cheesebox">
         {props.cheese ? loaded() : loading()}
-        </div>
     </section>
 );
 }
